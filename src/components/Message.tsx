@@ -1,7 +1,4 @@
-
-
-
-import React from 'react'
+import React, { useEffect } from 'react'
 
 
 interface UserMessage {
@@ -11,6 +8,11 @@ interface UserMessage {
 
 }
 const Message :React.FC<UserMessage> = ({name,message}) => {
+
+
+   
+
+
   return (
 
 
