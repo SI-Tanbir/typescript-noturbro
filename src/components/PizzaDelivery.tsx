@@ -3,13 +3,16 @@
 
 
 const menu = [
-    { name: "Margherita", price: 8 },
-    { name: "Pepperoni", price: 10 },
-    { name: "Hawaiian", price: 10 },
-    { name: "Veggie", price: 9 },
+    {id:1, name: "Margherita", price: 8 },
+    {id:2, name: "Pepperoni", price: 10 },
+    {id:3, name: "Hawaiian", price: 10 },
+    {id:4, name: "Veggie", price: 9 },
 ]
 
+
+
 interface pizza{
+    id:number
     name:string
     price:number
 
@@ -19,7 +22,7 @@ interface pizza{
 type Order ={
     id:number
     pizza:pizza
-    status:string
+    status:"completed" | "ordered"
 
 }
 
@@ -48,9 +51,9 @@ function placeOrder(pizzaName:string) {
 
 
   
-    const newOrder = { id: nextOrderId++, pizza: selectedPizza, status: "ordered" }
+    const newOrder:Order = { id: nextOrderId++, pizza: selectedPizza, status: "ordered" }
     orderQueue.push(newOrder)
-    return newOrder
+    return newOrder 
 }
 
 function completeOrder(orderId:number) {
@@ -67,11 +70,24 @@ function completeOrder(orderId:number) {
     return order
 }
 
+
+function getPizzaDetail(identifier:string | number){
+
+    if(identifier === "string"){
+        return menu.find(pizza=>pizza.name=== identifier)
+    }
+    else{
+        return menu.find(pizza=>pizza.id===identifier)
+    }
+
+
+}
+
 placeOrder("chicken bacon ranch")
 completeOrder(1)
 
 
-addNewPizza({name:"chicken Bacon ranch",price:12})
+addNewPizza({id:menu.length + 1,name:"chicken Bacon ranch",price:12})
 console.log("Menu:",menu)
 console.log("Cash in register",cashInRegister)
 console.log("Order queue",orderQueue)
