@@ -11,8 +11,9 @@ type Person ={
     age:number
     isStudent:boolean
     address:Address
-    postalCode?:number
+    postalCode?:number //? is to adding this the postal code is optional
 }
+
 
 
 // Example 1: A Student
@@ -142,3 +143,5 @@ const recentGrad: Person = {
     },
     postalCode: 11201
 }
+
+

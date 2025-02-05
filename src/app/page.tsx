@@ -5,6 +5,7 @@
 
 import CustomType from "@/components/CustomType";
 import Message from "@/components/Message";
+import TodoBox from "@/components/TodoItems";
 import { useEffect, useState } from "react";
 
 
@@ -52,6 +53,8 @@ const Home: React.FC = () => {
 
 <CustomType/>
 
+
+<TodoBox></TodoBox>
 
     </div>
   );
