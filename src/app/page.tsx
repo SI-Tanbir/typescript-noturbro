@@ -3,6 +3,7 @@
 "use client"
 
 
+import CustomType from "@/components/CustomType";
 import Message from "@/components/Message";
 import { useEffect, useState } from "react";
 
@@ -24,7 +25,7 @@ const Home: React.FC = () => {
     const timer =setTimeout(()=>{
 
         setUserName('tesing')
-        setUserMessage("i am testing")
+        setUserMessage("i am testing") 
     },5000)
 
     return () => clearTimeout(timer)
@@ -48,6 +49,8 @@ const Home: React.FC = () => {
 
       <Message name={userName} message={UserMessage} />
 
+
+<CustomType/>
 
 
     </div>
