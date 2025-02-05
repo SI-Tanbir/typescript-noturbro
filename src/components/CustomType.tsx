@@ -10,12 +10,14 @@ const CustomType = () => {
 
     }
 
-    let person1: Person = {
+    const person1: Person = {
 
         name: "rafik",
         age: 23,
         isStudent: true
     }
+
+    //like that we cann addedd more data 
     return (
         <div>
 
